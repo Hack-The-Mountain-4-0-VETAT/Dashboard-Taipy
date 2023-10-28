@@ -15,6 +15,8 @@ rest = tp.Rest()
 gui = Gui(page=section_1)
 
 tp.run(
+    rest=rest,
+    gui=gui,
     title="Taipy Dashboard",
     host='0.0.0.0',
     port=os.environ.get('PORT', '5000'),
