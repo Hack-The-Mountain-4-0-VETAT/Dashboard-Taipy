@@ -1,6 +1,5 @@
 from taipy.gui import Gui
 import pandas as pd
-import os
 
 section_1 = """
 ## Power Consumption Dashboard
