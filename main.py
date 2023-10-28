@@ -18,5 +18,6 @@ tp.run(
     title="Taipy Dashboard",
     host='0.0.0.0',
     port=os.environ.get('PORT', '5000'),
+    debug=False
 )
     
