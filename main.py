@@ -1,7 +1,9 @@
 from taipy.gui import Gui
 import taipy as tp
 import pandas as pd
-from gevent.pywsgi import WSGIServer
+import os
+
+
 section_1 = """
 ## Power Consumption Dashboard
 <|{dataset}|chart|x=YearMonth|y[1]=Usage|color=blue|>
@@ -9,11 +11,12 @@ section_1 = """
 
 dataset = pd.read_csv("data.csv")
 
+rest = tp.Rest()
 gui = Gui(page=section_1)
 
-if __name__ == '__main__':
-    app = gui.run(title='Dashboard',
-    		dark_mode=False)
+tp.run(
+    title="Taipy Dashboard",
+    host='0.0.0.0',
+    port=os.environ.get('PORT', '5000'),
+)
     
-http_server = WSGIServer(('', 5000), app)
-http_server.serve_forever()
