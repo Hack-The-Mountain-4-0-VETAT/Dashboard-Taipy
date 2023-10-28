@@ -13,10 +13,7 @@ gui = Gui(page=section_1)
 
 if __name__ == '__main__':
     gui.run(title='Dashboard',
-    		host='0.0.0.0',
-    		port=os.environ.get('PORT', '5050'),
     		dark_mode=False)
 else:
     app = gui.run(title='Dashboard',
-                  dark_mode=False,
-                  run_server=False)
+                  dark_mode=False)
